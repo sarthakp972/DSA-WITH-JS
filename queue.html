@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // /////////////////////////////////////////////////// //
+    let item=[];
+    let index=-1;
+    let b=1;
+    do{
+        
+        
+        let ch=prompt("Enter the valid choice for Queue | 1.Insert the value in | 2.Delete the value | 3.Display the value |  4. Exit");
+        
+         b=1;
+        switch(ch){
+                case '1':
+                enqueue();
+                break;
+                case '2':
+                dequeue();
+                break;
+                case '3':
+                    display();
+                break;
+                case '4':
+                   b=0;
+                   console.log('Exit.....................'); 
+                break;
+                default:
+                    alert("Enter the valid option");
+                    break;
+        }  
+    
+    
+    }while(b);
+    
+    
+    
+    function enqueue()
+    {     let data=prompt("Enter the number for adding in Q ");  
+        if(data==null){
+            console.log("Enter the valid data");
+        }
+        else{
+            item.push(data);
+            index++;
+            display();
+        }
+    }
+    
+    
+    
+    function dequeue(){
+        if(isEmpty()){
+                console.log("Your Q is  Empty")
+        }
+        else{
+            console.log("Your dequeue Element is ", item[0]);
+                 item.shift();
+
+               
+                display();
+                index--;
+        }
+    } 
+    
+    function isEmpty(){
+      if(index==-1){
+        return true;
+      }
+      return false;
+    }
+    
+    function display(){
+    
+        if(index==-1 || item.length==0){
+            console.log("Queue Is Empty");
+            return ;
+        }
+        console.log("Now Your Queue Is  ->  " , item);
+    }
+    
+     
+    </script>
+
+</body>
+
+</html>

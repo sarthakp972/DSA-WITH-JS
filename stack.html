@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stack</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // /////////////////////////////////////////////////// //
+let item=[];
+let index=-1;
+let b=1;
+do{
+    
+    
+    let ch=prompt("Enter the valid choice | 1.Insert the value | 2.Delete the value | 3.Display the value |  4. Exit");
+    
+     b=1;
+    switch(ch){
+            case '1':
+                push();
+            break;
+            case '2':
+                pop();
+            break;
+            case '3':
+                display();
+            break;
+            case '4':
+               b=false; 
+            break;
+            default:
+                alert("Enter the valid option");
+                break;
+    }  
+
+
+}while(b);
+
+
+
+function push()
+{     let data=prompt("Enter the number for inserting the Stack");  
+    if(data==null){
+        console.log("Enter the valid data");
+    }
+    else{
+        item.push(data);
+        index++;
+        display();
+    }
+}
+
+
+
+function pop(){
+    if(isEmpty()){
+            console.log("Your array is  Empty")
+    }
+    else{
+        console.log("Your poped Element is ", item[index]);
+            item.pop();
+           
+            display();
+            index--;
+    }
+} 
+
+function isEmpty(){
+  if(index==-1){
+    return true;
+  }
+  return false;
+}
+
+function display(){
+
+    if(index==-1){
+        console.log("Array Is Empty");
+        return ;
+    }
+    console.log("Now Your Stack Is " , item);
+}
+
+ 
+</script>
+</html>
